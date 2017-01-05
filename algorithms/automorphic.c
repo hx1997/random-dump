@@ -5,9 +5,9 @@
 
 #include <stdio.h>
 
-int is_automorphic(long int num) {
-	long int sqrd = num * num;
-	int lsig_digit, lsig_digit_sqrd;
+int is_automorphic(int num) {
+	int sqrd = num * num;
+	int lsig_digit; int lsig_digit_sqrd;
 	
 	if(num > 44720) return -1;
 	

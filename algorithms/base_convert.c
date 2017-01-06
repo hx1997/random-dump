@@ -12,6 +12,8 @@ char hex_digits[17] = "0123456789abcdef";
 int convert(int src_base, char *src_num, int dest_base, char *dest_num) {
 	char *p = dest_num;
 	int dec = 0, remainder = 0;
+
+	if (dest_base > 16) return -1;
 	
 	while (*src_num != '\0')
 		dec = dec * src_base + *src_num++ - '0';

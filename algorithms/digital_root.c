@@ -4,7 +4,6 @@
  */ 
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int find_digital_root(int num) {
 	int lsig_digit = 0; 

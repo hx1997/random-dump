@@ -21,7 +21,6 @@ int convert(int src_base, char *src_num, int dest_base, char *dest_num) {
 	for (; dec > 0; dec /= dest_base) {
 		remainder = dec % dest_base;
 		*dest_num++ = hex_digits[remainder];
-		
 	}
 	*dest_num-- = '\0';
 	

@@ -2,7 +2,6 @@
  * Author: hx1997
  * Desc: 判断一个给定自然数是否为自守数（该数本身平方后的数仍以该数结尾的数） 
  */ 
-
 #include <stdio.h>
 
 int is_automorphic(int num) {

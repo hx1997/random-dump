@@ -9,6 +9,17 @@
 
 char hex_digits[17] = "0123456789abcdef";
 
+int hexch2decnum(char hex_ch) {
+	if (hex_ch >= '0' && hex_ch <= '9')
+		return hex_ch - '0';
+	else if (hex_ch >= 'a' && hex_ch <= 'z')
+		return hex_ch - 'a' + 10;
+	else if (hex_ch >= 'A' && hex_ch <= 'Z')
+		return hex_ch - 'A' + 10;
+	else
+		return -1;
+}
+
 int convert(int src_base, char *src_num, int dest_base, char *dest_num) {
 	char *p = dest_num;
 	int dec = 0, remainder = 0;
@@ -16,7 +27,7 @@ int convert(int src_base, char *src_num, int dest_base, char *dest_num) {
 	if (dest_base > 16) return -1;
 	
 	while (*src_num != '\0')
-		dec = dec * src_base + *src_num++ - '0';
+		dec = dec * src_base + hexch2decnum(*src_num++);
 	
 	for (; dec > 0; dec /= dest_base) {
 		remainder = dec % dest_base;
